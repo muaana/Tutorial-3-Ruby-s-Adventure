@@ -8,21 +8,42 @@ public class EnemyController : MonoBehaviour
     public bool vertical;
     public float changeTime = 3.0f;
 
+    //Particles
     public ParticleSystem smokeEffect;
-
+    
+    //Rigidboyd etc
     Rigidbody2D rigidbody2D;
     float timer;
     int direction = 1;
     bool broken = true;
     
+    //Anim
     Animator animator;
+
+    //Audio
+    AudioSource audioSource;
+    public AudioSource brokenSound;
+    public AudioClip fixedSound;
+
+    //Ruby Controller
+    private RubyController rubyController;
     
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
+
+        //anim
         animator = GetComponent<Animator>();
+
+        //Audio
+        audioSource = GetComponent<AudioSource>();
+        brokenSound.Play();
+
+        //Ruby
+        GameObject rubyControllerObject = GameObject.FindWithTag("RubyController");
+        rubyController = rubyControllerObject.GetComponent<RubyController>();
     }
 
     void Update()
@@ -68,6 +89,7 @@ public class EnemyController : MonoBehaviour
         rigidbody2D.MovePosition(position);
     }
     
+    //damage
     void OnCollisionEnter2D(Collision2D other)
     {
         RubyController player = other.gameObject.GetComponent<RubyController >();
@@ -84,8 +106,25 @@ public class EnemyController : MonoBehaviour
         broken = false;
         rigidbody2D.simulated = false;
 
+        //anim
         animator.SetTrigger("Fixed");
-
+        
+        //particles
         smokeEffect.Stop();
+
+        //audio
+        audioSource.clip = fixedSound;
+        audioSource.loop = false;
+        audioSource.Play();
+
+        if (rubyController != null)
+        {
+            rubyController.FixedRobots(1);
+        }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

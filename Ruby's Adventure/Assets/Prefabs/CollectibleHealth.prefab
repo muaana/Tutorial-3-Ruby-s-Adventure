@@ -30,8 +30,7 @@ Transform:
   m_LocalPosition: {x: 0.01, y: -2.93, z: 0}
   m_LocalScale: {x: 0.2131, y: 0.2131, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7499218167471857573}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,87 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedClip: {fileID: 8300000, guid: af5f8b64e3f58f24c87ff8f789b04f6c, type: 3}
-  healthEffect: {fileID: 6165801493450914523}
---- !u!1001 &4720103654024839918
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7607637319137091869}
-    m_Modifications:
-    - target: {fileID: 1445794610442565685, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1445794610442565685, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1445794610442565685, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1445794610442565685, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3351181307548794761, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-      propertyPath: m_Name
-      value: HealthEffect
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
---- !u!198 &6165801493450914523 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1445794610442565685, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-  m_PrefabInstance: {fileID: 4720103654024839918}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7499218167471857573 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2995947579142593867, guid: 73fdd6d3450d9fb439554fa0f1dd41f0, type: 3}
-  m_PrefabInstance: {fileID: 4720103654024839918}
-  m_PrefabAsset: {fileID: 0}
+  healthIncrease: {fileID: 0}

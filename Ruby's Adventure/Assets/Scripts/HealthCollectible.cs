@@ -6,15 +6,9 @@ public class HealthCollectible : MonoBehaviour
 {
     public AudioClip collectedClip;
 
-    //try later to apply particles
-    //public ParticleSystem healthEffect;
-
     void OnTriggerEnter2D(Collider2D other)
     {
         RubyController controller = other.GetComponent<RubyController>();
-
-        //not playing animation must fix later
-        //healthEffect.Play();
 
         if (controller != null)
         {
