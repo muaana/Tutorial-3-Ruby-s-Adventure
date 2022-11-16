@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349.3334
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 22
+  controlID: 24
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 23
+  controlID: 25
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 224.66667
     height: 1069.3334
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -556,9 +556,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.2034528, y: 8.803653, z: -0.31281477}
+    m_Target: {x: 940.10803, y: 642.5185, z: 4.3839383}
     speed: 2
-    m_Value: {x: 2.2034528, y: 8.803653, z: -0.31281477}
+    m_Value: {x: 889.60724, y: 643.2814, z: 3.7992146}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -609,9 +609,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 32.19209
+    m_Target: 591.22266
     speed: 2
-    m_Value: 32.19209
+    m_Value: 649.69525
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -667,9 +667,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9ec30300
-      m_LastClickedID: 246686
-      m_ExpandedIDs: 489afaff9a9afaff4a9ffaff38a3faff30a4faff82a4faff32a9faff20adfaff82aefaffd6aefaff86b3faff74b7faffb0b8faff04b9faffb4bdfaffa2c1fafffac2faff4cc3faff9ac9faff88cdfaff5cf0faff9cf7faff5cd3fbff94d9fbff005efcff9c7dfcff0482fcff4287fcffb6d9fcffc4a0feff4aa1feff5aa5feffaca7feffb6abfeff2aacfeff3ab0feffbab4feffe6bafeff5ebffeffe2c3feffa2c8feff22cdfeffa2d1feff26d6feffe2dafeff5cdffeffe6e3feff60e8fefffaedfeffe0effefff0f3feff48f6feff14fbfeff94fffeff1e04ffff9e08ffff3c0dfffffc11ffff0025ffff986100000c410100ec6c0100267701006c8b0100d48b0100d4aa0100deaa01000aab010042ab010066ab0100acab0100b8ab010008f3010026f3010000f701005efa01000afb0100100b0200020c02008a0c02008c920200ee9a0200fa9a0200a6c003009ec30300
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 3a82ffff8c82ffff3c87ffff2a8bffff8e8cffffe08cffff9091ffff7e95ffffac96fffff496ffffa49bffff929fffff9ea0ffffe4a0ffff94a5ffff82a9ffff1aafffff96b0ffffdcb0ffff8cb5ffff7ab9ffff5abeffffe6bfffff2cc0ffffdcc4ffffcac8ffff50cfffff74d1ffffc0d1ffff12d8ffff04dcfffffce0ffff54e1ffffa6e7ffff98ebffff10fbfffff8a900000caa0000acce000050d90000eeef00007efc00003c130100d41d0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -826,23 +826,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jimen\OneDrive\Documents\DIG 3840 Projects\Ruby's Adventure
     2022\Tutorial-3-Ruby-s-Adventure\Ruby's Adventure
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 115}
-    m_SelectedIDs: 40680000
-    m_LastClickedID: 26688
-    m_ExpandedIDs: 000000001668000038680000ca6b000000ca9a3b
+    scrollPos: {x: 0, y: 23}
+    m_SelectedIDs: 646d0000
+    m_LastClickedID: 28004
+    m_ExpandedIDs: 000000005c68000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -870,7 +870,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000016680000
+    m_ExpandedIDs: 000000005c680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -895,8 +895,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8a150000
-    m_LastClickedInstanceID: 5514
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000006000009a6a0000bc610000246a0000ae7600000c660000dc6d0000bc760000327c00001665000038650000
     m_RenameOverlay:
