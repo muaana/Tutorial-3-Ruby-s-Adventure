@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NonPlayerCharacter : MonoBehaviour
 {
-    public float displayTime = 4.0f;
+    public float displayTime = 5.0f;
     public GameObject dialogBox;
     float timerDisplay;
     

@@ -10,7 +10,7 @@ public class RubyController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float horizontal; 
     float vertical;
-    public float speed = 3.0f;
+    public float speed = 4.0f;
     public static int level = 1;
 
     //Projectile
@@ -18,9 +18,14 @@ public class RubyController : MonoBehaviour
     private int cogCount = 5;
 
     //Health
-    public int maxHealth = 5;
+    public int maxHealth = 10;
     public int health { get { return currentHealth; }}
     int currentHealth;
+
+    //Speed Boosts
+    public float timeBoosting = 4.0f;
+    float speedBoostTimer;
+    bool isBoosting;
 
     //Invincibility
     public float timeInvincible = 2.0f;
@@ -38,6 +43,7 @@ public class RubyController : MonoBehaviour
     public AudioClip hitSound;
     public AudioClip winSound;
     public AudioClip loseSound;
+    public AudioClip coinPickup;
 
     //Particles
     public ParticleSystem healthDecrease;
@@ -47,9 +53,10 @@ public class RubyController : MonoBehaviour
     public TextMeshProUGUI fixedText;
     public TextMeshProUGUI cogText;
     int scoreFixed = 0;
+    public TextMeshProUGUI coinText;
+    int coinCount = 0;
     public GameObject winText;
     public GameObject loseText;
-    public GameObject continueText;
     private bool gameOver = false;
 
     // Start is called before the first frame update
@@ -75,16 +82,31 @@ public class RubyController : MonoBehaviour
         //Win/Lose Text
         winText.SetActive(false);
         loseText.SetActive(false);
-        continueText.SetActive(false);
         gameOver = false;
 
         scoreFixed = 0;
         SetFixedText();
+
+        level = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //speedboost
+        if (isBoosting == true)
+        {
+            speedBoostTimer -= Time.deltaTime; // Once speed boost activates, it counts down
+            speed = 8;
+            healthIncrease.Play();
+        
+            if (speedBoostTimer < 0)
+            {
+                isBoosting = false;
+                speed = 5; 
+            }
+        }
+
         //Movement
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -130,9 +152,15 @@ public class RubyController : MonoBehaviour
                     character.DisplayDialog();
                 }
 
-                if(level == 2)
+                if (scoreFixed == 5)
                 {
                     SceneManager.LoadScene("Level2");
+                    level = 2;
+                }
+
+                if (character != null && level ==2)
+                {
+                    character.DisplayDialog();
                 }
             }
         }
@@ -151,10 +179,10 @@ public class RubyController : MonoBehaviour
 
             {
               SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
             }
 
-            if (gameOver == true && level == 1){
+            if (gameOver == true && level == 1)
+            {
                 SceneManager.LoadScene("Level1");
             }
         }
@@ -170,6 +198,7 @@ public class RubyController : MonoBehaviour
         rigidbody2d.MovePosition(position);
     }
 
+    //health
     public void ChangeHealth(int amount)
     {
         if (amount > 0)
@@ -250,27 +279,49 @@ public class RubyController : MonoBehaviour
         cogText.text = "Cogs: " + cogCount.ToString(); 
     }
 
+    void SetCoinText()
+    {
+        coinText.text = "Coin: " + coinCount.ToString() + "/7";
+    }
+    //coin meter
+    public void CoinAmounts(int amount)
+    {
+        if (level == 2)
+        {
+            coinCount = 0;
+            SetCoinText();
+            coinCount += amount;
+            coinText.text = "Coin: " + coinCount.ToString() + "/7";
+        }
+    }
+
     public void FixedRobots(int amount)
     {
         scoreFixed += amount;
         fixedText.text = "Fixed Robots: " + scoreFixed.ToString() + "/5";
 
-        if(scoreFixed == 5 && level == 1)
-        {
-            continueText.SetActive(true);
-            level = 2;
-        }
+        Debug.Log("Fixed Robots: " + scoreFixed);
 
-        else if(level == 2 && scoreFixed == 5)
+        if (scoreFixed == 5 && level == 1)
         {
             winText.SetActive(true);
+        }
+
+        if (scoreFixed == 5 && coinCount == 7)
+        {
+            winText.SetActive(true);
+            loseText.SetActive(false);
             speed = 0;
             background.Stop();
             PlaySound(winSound);
             gameOver = true;
-            level = 1;
-        }  
+            level = 2;
+        } 
+
+        //Debug.Log(if (level == 2 && coinCount >= 7));
     }
+
+   
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -280,6 +331,23 @@ public class RubyController : MonoBehaviour
             SetCogText();
             other.gameObject.SetActive(false);
             audioSource.Play();
-         }        
+        }
+
+        else if (other.gameObject.CompareTag("Coin"))
+        {
+            coinCount += 1;
+            SetCoinText();
+            other.gameObject.SetActive(false);
+            PlaySound(coinPickup);
+        }        
+    }
+
+    public void SpeedBoost(int amount)
+    {
+        if (amount > 0)
+        {
+            speedBoostTimer = timeBoosting;
+            isBoosting = true;
+        }
     }
 }
